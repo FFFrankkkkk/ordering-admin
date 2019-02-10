@@ -1,0 +1,13 @@
+@charset "utf-8";
+* {                  /* 清除不同浏览器的不同外边距 */
+  margin: 0;
+  padding: 0;
+}
+@media (min-width:768px){.container1{width:990px}}
+@media (min-width:992px){.container1{width:990px}}
+@media (min-width:1200px){.container1{width:1170px}}
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+/*.wos-brand{height:auto;padding:7px 25px}*/
