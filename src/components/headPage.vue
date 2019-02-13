@@ -1,41 +1,4 @@
 <template>
-<!--<div id="headPage">-->
-  <!--<div>-->
-    <!--<nav class="navbar navbar-default" role="navigation" style="background-color: #3d3d3d;border-color: #3d3d3d;">-->
-      <!--<div class="container-fluid">-->
-        <!--<div class="navbar-header">-->
-          <!--<a class="navbar-brand wos-brand" href="#">-->
-            <!--<img src="../assets/images/mcdelivery_logo_en.jpg"/>-->
-          <!--</a>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<ul class="nav navbar-nav">-->
-            <!--<li  style="background-color:#FFEB3B; "><a href="#">浏览菜单</a></li>-->
-            <!--<li><a href="#">优惠券</a></li>-->
-            <!--<li><a href="#">我的账户</a></li>-->
-            <!--<li class="dropdown">-->
-              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-                <!--帮助-->
-                <!--<b class="caret"></b>-->
-              <!--</a>-->
-              <!--<ul class="dropdown-menu">-->
-                <!--<li><a href="#">隐私政策</a></li>-->
-                <!--<li><a href="#">订餐须知</a></li>-->
-                <!--<li><a href="#">常见问题 Report</a></li>-->
-                <!--<li class="divider"></li>-->
-                <!--<li><a href="#">关于30分钟必达</a></li>-->
-                <!--<li class="divider"></li>-->
-                <!--<li><a href="#">经营公示</a></li>-->
-                <!--<li class="divider"></li>-->
-                <!--<li><a href="#">安全须知</a></li>-->
-              <!--</ul>-->
-            <!--</li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</nav>-->
-  <!--</div>-->
-<!--</div>-->
   <div>
   <div class="header-actions row">
     <div class="my-account-quicklinks">
@@ -47,16 +10,17 @@
   </div>
   <div class="global-navbar navbar navbar-default" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand wos-brand" href="home.html" tppabs="https://www.4008-517-517.cn/cn/home.html">
-        <img src="../assets/images/mcdelivery_logo_en.jpg" tppabs="https://www.4008-517-517.cn/cn/static/1545754941318/assets/86/img/mcdelivery_logo_zh.jpg" alt="McDelivery&amp;trade;" />
+      <a class="navbar-brand wos-brand"  tppabs="https://www.4008-517-517.cn/cn/home.html">
+        <router-link to="/"> <img src="../assets/images/mcdelivery_logo_en.jpg" tppabs="https://www.4008-517-517.cn/cn/static/1545754941318/assets/86/img/mcdelivery_logo_zh.jpg" alt="McDelivery&amp;trade;" /></router-link>
       </a>
     </div>
     <div class="main-navigation clearfix">
       <ul class="nav navbar-nav">
         <li class="menu-item menu-item-menu">
-          <a class="menu-item-target" href="browse/menu.html" tppabs="https://www.4008-517-517.cn/cn/menu.html">
+          <a class="menu-item-target" tppabs="https://www.4008-517-517.cn/cn/menu.html">
             <i class="fa mcd mcd-burger icon"></i>
-            浏览菜单
+            <!--浏览菜单-->
+            <router-link to="/menuDisplay">浏览菜单</router-link>
           </a>
         </li>
         <li class="menu-item menu-item-menu">

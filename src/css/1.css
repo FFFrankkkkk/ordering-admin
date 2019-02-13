@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+@media (max-width: 767px){.container1{width:990px} }
 @media (min-width:768px){.container1{width:990px}}
 @media (min-width:992px){.container1{width:990px}}
 @media (min-width:1200px){.container1{width:1170px}}
@@ -10,4 +11,11 @@
   margin-left: auto;
   margin-right: auto;
 }
-/*.wos-brand{height:auto;padding:7px 25px}*/
+.carouselImg{
+  width: 100%;
+}
+.loginSection{
+  right: 0px;
+  top: 0px;
+  position: absolute;
+}
