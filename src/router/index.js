@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import headPage from '@/components/headPage'
 import home from '@/components/home'
 import menuDisplay from '@/components/menuDisplay'
+import manageMain from '@/components/manageUIMain/manageMain'
+import manageProduct from '@/components/manage/manageProduct'
 import $ from 'jquery'
 // import 'bootstrap'
 // import 'bootstrap/dist/css/bootstrap.css'
@@ -21,6 +23,18 @@ export default new Router({
       path: '/menuDisplay',
       name: 'menuDisplay',
       component: menuDisplay
+    },
+    {
+      path: '/manageMain',
+      name: 'manageMain',
+      component: manageMain,
+      children:[
+        {
+          path: 'manageProduct',
+          name: 'manageProduct',
+          component: manageProduct
+        }
+      ]
     }
   ]
 })

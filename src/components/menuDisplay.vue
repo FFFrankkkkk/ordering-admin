@@ -41,7 +41,7 @@
                 <div class="product-card product-card--standard">
                 <div class="panel panel-default panel-product">
                   <div class="panel-body">
-                    <img :src="product.imgUrl" tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900047.png?" class="img-block" />
+                    <a href="#" data-toggle="modal" data-target="#myModal" v-on:click="getProductInformation(1)"><img :src="product.imgUrl" tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900047.png?" class="img-block" /></a>
                     <h5 class="product-title">{{product.productName}} </h5>
                     <div class="product-badges">
                     </div>
@@ -65,134 +65,6 @@
                 </div>
               </div>
               </template>
-              <!--<div class="product-card product-card&#45;&#45;standard">-->
-                <!--<div class="panel panel-default panel-product">-->
-                  <!--<div class="panel-body">-->
-                    <!--<img src="../assets/images/products/900038.png-.jpg" tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900038.png?" class="img-block" />-->
-                    <!--<h5 class="product-title">Twister Fries</h5>-->
-                    <!--<div class="product-badges">-->
-
-
-                    <!--</div>-->
-                  <!--</div>-->
-                  <!--<div class="panel-footer">-->
-                    <!--<div class="row row-narrow">-->
-                      <!--<div class="col-xs-6">-->
-                        <!--<div class="product-details">-->
-                          <!--<div class="product-cost">-->
-                            <!--From <span class="starting-price">¥13.00</span>-->
-                          <!--</div>-->
-
-                          <!--<div class="product-nutritional-info">-->
-
-
-
-
-
-                          <!--</div>-->
-                        <!--</div>-->
-                      <!--</div>-->
-                      <!--<div class="product-controls">-->
-
-
-
-
-
-
-
-
-                        <!--<a data-productid="789" href="#signin" data-toggle="modal" data-target="#signin" class="btn btn-block action-create btn-red" onclick="onProductClick({ &#39;name&#39;:&quot;Twister Fries&quot;,&#39;id&#39;:&#39;900038&#39;,&#39;price&#39;:&#39;¥13.00&#39;,&#39;brand&#39;:&#39;McDonalds&#39;,&#39;cat&#39;:&quot;Promotions &amp; Popular Picks&quot;,&#39;variant&#39;:&#39;&#39;,&#39;url&#39;:&#39;#signin&#39;})">Add</a>-->
-
-
-
-
-
-
-
-
-
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<div class="product-card product-card&#45;&#45;standard">-->
-                <!--<div class="panel panel-default panel-product">-->
-                  <!--<div class="panel-body">-->
-                    <!--<img src="../assets/images/products/900040.png-.jpg" tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900040.png?" class="img-block" />-->
-                    <!--<h5 class="product-title">Red Bean Pie</h5>-->
-                    <!--<div class="product-badges">-->
-
-
-                    <!--</div>-->
-                  <!--</div>-->
-                  <!--<div class="panel-footer">-->
-                    <!--<div class="row row-narrow">-->
-                      <!--<div class="col-xs-6">-->
-                        <!--<div class="product-details">-->
-                          <!--<div class="product-cost">-->
-                            <!--From <span class="starting-price">¥9.00</span>-->
-                          <!--</div>-->
-
-                          <!--<div class="product-nutritional-info">-->
-
-
-
-
-
-                          <!--</div>-->
-                        <!--</div>-->
-                      <!--</div>-->
-                      <!--<div class="product-controls">-->
-
-
-
-
-
-
-
-
-                        <!--<a data-productid="789" href="#signin" data-toggle="modal" data-target="#signin" class="btn btn-block action-create btn-red" onclick="onProductClick({ &#39;name&#39;:&quot;Red Bean Pie&quot;,&#39;id&#39;:&#39;900040&#39;,&#39;price&#39;:&#39;¥9.00&#39;,&#39;brand&#39;:&#39;McDonalds&#39;,&#39;cat&#39;:&quot;Promotions &amp; Popular Picks&quot;,&#39;variant&#39;:&#39;&#39;,&#39;url&#39;:&#39;#signin&#39;})">Add</a>-->
-
-
-
-
-
-
-
-
-
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<div class="product-card product-card&#45;&#45;standard">-->
-                <!--<div class="panel panel-default panel-product">-->
-                  <!--<div class="panel-body">-->
-                    <!--<img src="../assets/images/products/900041.png-.jpg" tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900041.png?" class="img-block" />-->
-                    <!--<h5 class="product-title">Red Bean Pie 2HP</h5>-->
-                    <!--<div class="product-badges">-->
-                    <!--</div>-->
-                  <!--</div>-->
-                  <!--<div class="panel-footer">-->
-                    <!--<div class="row row-narrow">-->
-                      <!--<div class="col-xs-6">-->
-                        <!--<div class="product-details">-->
-                          <!--<div class="product-cost">-->
-                            <!--From <span class="starting-price">¥14.50</span>-->
-                          <!--</div>-->
-                          <!--<div class="product-nutritional-info">-->
-                          <!--</div>-->
-                        <!--</div>-->
-                      <!--</div>-->
-                      <!--<div class="product-controls">-->
-                        <!--<a data-productid="789" href="#signin" data-toggle="modal" data-target="#signin" class="btn btn-block action-create btn-red" onclick="onProductClick({ &#39;name&#39;:&quot;Red Bean Pie 2HP&quot;,&#39;id&#39;:&#39;900041&#39;,&#39;price&#39;:&#39;¥14.50&#39;,&#39;brand&#39;:&#39;McDonalds&#39;,&#39;cat&#39;:&quot;Promotions &amp; Popular Picks&quot;,&#39;variant&#39;:&#39;&#39;,&#39;url&#39;:&#39;#signin&#39;})">Add</a>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</div>-->
             </div>
           </div>
         </div>
@@ -209,6 +81,110 @@
   </div>
    </div>
     </div>
+    <div id="signin" class="modal-login modal fade in" role="dialog" aria-labelledby="modal-title" aria-hidden="true" tabindex="-1" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+
+            <!--<img class="logo" src="/cn/static/1545754941318/assets/86/img/mcdelivery_logo_zh.jpg" alt="">-->
+
+
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <i class="fa mcd mcd-close"  v-on:click="del"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!--<h2 id="login-title">欢迎，登录后开始订餐<a href="#" data-toggle="html-popover" data-placement="bottom" data-html="true" data-content-selector="#lighbox-popover-preffered-signin-method" data-original-title="" title="" data-container="#form_login_modal"><i class="mcd mcd-icon mcd-detail"></i></a>-->
+              <!--&lt;!&ndash; POPOVER START &ndash;&gt;-->
+              <!--<div id="lighbox-popover-preffered-signin-method" class="popover-details">-->
+                <!--<div class="popover-wrapper">-->
+                  <!--<h4>首选登录方式</h4>-->
+                  <!--<p>请以您帐户设置的首选方式（邮箱或手机号）登录。</p>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; POPOVER END &ndash;&gt;-->
+            <!--</h2>-->
+            <!--<div class="row">-->
+              <!--<div class="col-xs-offset-3 col-xs-6">-->
+                <!--<form action="/cn/login.html" method="post" accept-charset="utf-8" role="form" id="form_login_modal" name="form_login_modal" class="form-login-modal form-login" data-required-symbol="false" novalidate="novalidate">-->
+                  <!--<fieldset class="form-credentials">-->
+                    <!--<div class="list-group textfield-list-group">-->
+                      <!--<div class="list-group-item textfield-list-group-item">-->
+                        <!--<label class="sr-only" for="form_login_modal_username">邮箱</label>-->
+                        <!--<input type="text" name="userName" id="form_login_modal_username" class="required list-group-form-control" placeholder="邮箱/手机号" value="" aria-required="true">-->
+
+                      <!--</div>-->
+                      <!--<div class="list-group-item textfield-list-group-item">-->
+                        <!--<label class="sr-only" for="form_login_modal_password">密码</label>-->
+                        <!--<input type="password" name="password" id="form_login_modal_password" class="required list-group-form-control" placeholder="密码" autocomplete="off" value="" aria-required="true">-->
+
+                      <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="checkbox">-->
+                      <!--<div class="icheckbox" style="position: relative;"><input type="checkbox" name="rememberMe" id="modal_login_rememberme" value="true" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div><input type="hidden" name="_rememberMe" value="on">-->
+                      <!--<label for="modal_login_rememberme" class="checkbox-label">下次自动登录</label>-->
+                    <!--</div>-->
+                  <!--</fieldset>-->
+                  <!--<fieldset class="form-actions">-->
+
+                    <!--<button type="submit" class="btn btn-default btn-red btn-block btn-xl btn-submit" onclick="               dataLayer.push({               'event':'trackEvent',               'vpv':'vpv_signin',               'eventDetails.category':'signin',               'eventDetails.action':'click',               'eventDetails.label':'signin_popup'              });             ">登录</button>-->
+
+
+                    <!--<p class="action-forgot-password">-->
+                      <!--<a class="action-link" href="/cn/forgot-password.html">忘记密码？</a>-->
+                    <!--</p>-->
+                    <!--<hr class="fading-divider">-->
+
+                    <!--<a class="action-link" onclick="                  dataLayer.push({                   'event':'trackEvent',                   'vpv':'vpv_enter_delivery_address',                   'eventDetails.category':'registration',                   'eventDetails.action':'click',                   'eventDetails.label':'register_popup'                  });                 " href="/cn/guest.html">-->
+                      <!--<p class="header-new-customer">新用户</p>-->
+                      <!--<p class="action-check-address">-->
+                        <!--<span> <i class="fa fa-caret-right"></i> 请输入您的送餐地址</span>-->
+                      <!--</p>-->
+                    <!--</a>-->
+
+
+                  <!--</fieldset>-->
+                  <!--<input type="hidden" name="csrfValue" value="0F32EE0"></form>-->
+              <!--</div>-->
+            <!--</div>-->
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+              模态框（Modal）标题
+            </h4>
+          </div>
+          <div class="modal-body">
+            按下 ESC 按钮退出。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary">
+              添加
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   </div>
 </template>
 <script type="text/javascript" >
@@ -220,7 +196,8 @@
           productTypesNumber: 0,
           productTypes: [],
           productList: [],
-          base_url: this.$http.defaults.baseURL
+          base_url: this.$http.defaults.baseURL,
+          productInformation:{}
         }
       },
       created: function () {
@@ -251,6 +228,9 @@
               }
           }
              this.selectedType=index;
+        },
+        getProductInformation:function (index) {
+
         }
       }
     }
