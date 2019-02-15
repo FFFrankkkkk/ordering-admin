@@ -11,7 +11,7 @@
         user:"",
         base_url:this.$http.defaults.baseURL,
         be:'aaa'        　　　
-              　　　　              　　　　              　　　　              　　　　}
+     }
     },
     created:function(){  //钩子函数，创建vue组件后被自动调用。发生在mounted之前
 //      this.getUser();

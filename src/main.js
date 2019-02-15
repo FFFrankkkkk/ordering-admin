@@ -13,7 +13,8 @@ import global_ from './components/base.vue'
 Vue.prototype.GLOBAL = global_;
 axios.defaults.baseURL=global_.BASE_URL;
 axios.defaults.withCredentials=true;
-Vue.prototype.$http = axios
+Vue.prototype.$http = axios;
+Vue.prototype.cart=global_.cart;
 new Vue({
   el: '#app',
   router,

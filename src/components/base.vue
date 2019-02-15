@@ -5,5 +5,6 @@
   export default{
     BASE_URL,
     BASE_URL_CLIENT,
+    cart:[]
   }
 </script>

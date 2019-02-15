@@ -29,9 +29,9 @@
           </a>
         </li>
         <li class="menu-item menu-item-menu">
-          <a class="menu-item-target" href="#signin" data-toggle="modal" data-target="#signin">
+          <a class="menu-item-target" href="#" v-on:click="showCart" data-toggle="modal" data-target="#signin">
             <i class="fa mcd mcd-burger icon"></i>
-            优惠券
+               我的购物车
           </a>
         </li>
         <li class="menu-item menu-item-account dropdown">
@@ -148,6 +148,13 @@
           }else{
             alert("请先登陆！");
           }
+      },
+      showCart:function () {
+       if(!this.user){
+           alert("请先登陆");
+       }else if(this.user){
+         this.$router.push({ name: 'shoppingCart' })
+       }
       }
     },
     watch: {
