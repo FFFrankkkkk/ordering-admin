@@ -1,6 +1,40 @@
 <template>
   <div>
-{{this.be}}
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">管理菜单</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">查看菜单</a></li>
+            <li><a href="#">添加菜品</a></li>
+            <li><a href="#">添加菜品种类</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form role="form">
+      <div class="form-group">
+        <label for="name">菜品名称</label>
+        <input type="text" class="form-control" id="name"
+               placeholder="请输入名称">
+      </div>
+      <div class="form-group">
+        <label for="inputfile">图片上传</label>
+        <input type="file" id="inputfile">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control"    placeholder="价格">
+        <span class="input-group-addon">.00</span>
+      </div>
+      <div class="form-group">
+        <label for="name">菜品介绍</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-default">提交</button>
+    </form>
   </div>
 </template>
 <script type="text/javascript">

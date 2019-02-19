@@ -29,10 +29,18 @@
           </a>
         </li>
         <li class="menu-item menu-item-menu">
+          <template v-if=" this.user.type=='manager'">
           <a class="menu-item-target" href="#" v-on:click="showCart" data-toggle="modal" data-target="#signin">
             <i class="fa mcd mcd-burger icon"></i>
-               我的购物车
+               管理订单
           </a>
+          </template>
+          <template v-if=" this.user.type=='user'">
+            <a class="menu-item-target" href="#" v-on:click="showCart" data-toggle="modal" data-target="#signin">
+              <i class="fa mcd mcd-burger icon"></i>
+              我的购物车
+            </a>
+          </template>
         </li>
         <li class="menu-item menu-item-account dropdown">
           <a class="menu-item-target dropdown-toggle" href="#" data-toggle="modal" data-target="#signin" v-on:click="myCount" >
