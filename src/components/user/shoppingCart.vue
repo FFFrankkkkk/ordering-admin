@@ -78,6 +78,7 @@
       deleteAllProduct:function () {
         this.ad=[];
         this.cart = this.ad;
+        this.countTotalPrice();
       },
       countTotalPrice: function () {
         this.totalPrice=0
@@ -116,6 +117,7 @@
           .then(response => {
                 alert("下单成功，待确认！");
                 this.cart=[];
+                this.ad=[];
           }).catch(error => {
             console.log(error);
           }

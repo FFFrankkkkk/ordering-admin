@@ -30,9 +30,9 @@
         </li>
         <li class="menu-item menu-item-menu">
           <template v-if=" this.user.type=='manager'">
-          <a class="menu-item-target" href="#" v-on:click="showCart" data-toggle="modal" data-target="#signin">
+          <a class="menu-item-target" href="#"  data-toggle="modal" data-target="#signin">
             <i class="fa mcd mcd-burger icon"></i>
-               管理订单
+            <router-link to="/manageOrder">管理订单</router-link>
           </a>
           </template>
           <template v-if=" this.user.type=='user'">
