@@ -41,7 +41,7 @@
                 <div class="product-card product-card--standard">
                 <div class="panel panel-default panel-product">
                   <div class="panel-body">
-                    <a href="#" data-toggle="modal" data-target="#myModal" v-on:click="getProductInformation(product)"><img :src="product.imgUrl" tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900047.png?" class="img-block" /></a>
+                    <a href="#" data-toggle="modal" data-target="#myModal" v-on:click="getProductInformation(product)"><img :src="product.imgUrl" width="176.52px" height="132.39px"  tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900047.png?" class="img-block" /></a>
                     <h5 class="product-title">{{product.productName}} </h5>
                     <div class="product-badges">
                     </div>
