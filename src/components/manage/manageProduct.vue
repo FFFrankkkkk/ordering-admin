@@ -9,7 +9,7 @@
           <ul id="selectFunction" class="nav navbar-nav">
             <li id="funtion1" class="active" @click="getFunction(0)"><a href="#">查看菜单</a></li>
             <li><a id="funtion2" href="#" @click="getFunction(1)">添加菜品</a></li>
-            <li><a id="funtion3"href="#" @click="getFunction(2)">添加菜品种类</a></li>
+            <li><a id="funtion3"href="#" @click="getFunction(2)">管理菜品种类</a></li>
           </ul>
         </div>
       </div>
@@ -20,7 +20,7 @@
           <div class="row row-narrow">
               <div id="product-cards" class="product-cards" data-equal-height=".product-card--standard .product-title">
                 <div class="row row-narrow">
-                  <template v-for="product in products">
+                  <template v-for="(product,index) in products">
                     <div class="product-card product-card--standard">
                       <div class="panel panel-default panel-product">
                         <div class="panel-body">
@@ -42,7 +42,7 @@
                             </div>
                             <div class="product-controls">
                               <a data-productid="789" href="#signin" data-toggle="modal" data-target="#signin" class="btn btn-block action-create btn-red" onclick="onProductClick({ &#39;name&#39;:&quot;Golden Arch Bucket D EVM for CNY &quot;,&#39;id&#39;:&#39;900047&#39;,&#39;price&#39;:&#39;¥96.00&#39;,&#39;brand&#39;:&#39;McDonalds&#39;,&#39;cat&#39;:&quot;Promotions &amp; Popular Picks&quot;,&#39;variant&#39;:&#39;&#39;,&#39;url&#39;:&#39;#signin&#39;})" :id="product.productId"  v-on:click="editProduct(product)">编辑</a>
-                              <a data-productid="789" href="#signin" data-toggle="modal" data-target="#signin" class="btn btn-block action-create btn-red" onclick="onProductClick({ &#39;name&#39;:&quot;Golden Arch Bucket D EVM for CNY &quot;,&#39;id&#39;:&#39;900047&#39;,&#39;price&#39;:&#39;¥96.00&#39;,&#39;brand&#39;:&#39;McDonalds&#39;,&#39;cat&#39;:&quot;Promotions &amp; Popular Picks&quot;,&#39;variant&#39;:&#39;&#39;,&#39;url&#39;:&#39;#signin&#39;})" :id="product.productId"  v-on:click="getProductInformation(product)">删除</a>
+                              <a data-productid="789" href="#signin" data-toggle="modal" data-target="#signin" class="btn btn-block action-create btn-red" onclick="onProductClick({ &#39;name&#39;:&quot;Golden Arch Bucket D EVM for CNY &quot;,&#39;id&#39;:&#39;900047&#39;,&#39;price&#39;:&#39;¥96.00&#39;,&#39;brand&#39;:&#39;McDonalds&#39;,&#39;cat&#39;:&quot;Promotions &amp; Popular Picks&quot;,&#39;variant&#39;:&#39;&#39;,&#39;url&#39;:&#39;#signin&#39;})"  v-on:click="deleteProduct(index)">删除</a>
                             </div>
                           </div>
                         </div>
@@ -54,38 +54,43 @@
           </div>
         </div>
       </div>
-      <div id="editProductSection" style="display: none">
-        <form action="">
-          <div class="form-group">
-            <label for="name">菜品名称</label>
-            <input type="text" class="form-control" id="editname" v-model="eidtProduct.productName"
-                   placeholder="请输入名称">
+    </div>
+    <div id="editProductSection" style="display:none;">
+      <form action="">
+        <div class="form-group">
+          <label for="name">菜品名称</label>
+          <input type="text" class="form-control" id="editname" v-model="eidtProduct.productName"
+                 placeholder="请输入名称">
+        </div>
+        <tr><td height="30px">所属类型：</td>
+          <td><select id="editproductType" v-model="eidtProduct.productType">
+            <template v-for="productType in productTypes">
+              <option :value="productType.name">{{productType.name}}</option>
+            </template>
+          </select>
+          </td>
+        </tr>
+        <div class="panel-body">
+          <a href="#" data-toggle="modal" data-target="#myModal" v-on:click="getProductInformation(product)"><img :src="eidtProduct.imgUrl" width="176.52px" height="132.39px"  tppabs="https://www.4008-517-517.cn/cn/static/1547573486227/assets/86/products/900047.png?" class="img-block" /></a>
+          <div class="product-badges">
           </div>
-          <tr><td height="30px">所属类型：</td>
-            <td><select id="editproductType" v-model="eidtProduct.productType">
-              <template v-for="productType in productTypes">
-                <option :value="productType.name">{{productType.name}}</option>
-              </template>
-            </select>
-            </td>
-          </tr>
-          <div class="form-group">
-            <label>图片上传</label>
-            <input @change="getFile($event)" type="file" multiple="multiple">
-            <br>修改预览：<img id="editImage" height="100px"/>
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input type="text" class="form-control"    placeholder="价格" v-model="eidtProduct.price">
-            <span class="input-group-addon">.00</span>
-          </div>
-          <div class="form-group">
-            <label for="name">菜品介绍</label>
-            <textarea class="form-control" rows="3" v-model="eidtProduct.text"></textarea>
-          </div>
-          <button type="button" class="btn btn-default"  @click="submitEditProduct($event)">确定更改</button>
-        </form>
-      </div>
+        </div>
+        <div class="form-group">
+          <label>图片上传</label>
+          <input @change="getFile($event)" type="file" multiple="multiple">
+          <br>修改预览：<img id="editImage" height="100px"/>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" class="form-control"    placeholder="价格" v-model="eidtProduct.price">
+          <span class="input-group-addon">.00</span>
+        </div>
+        <div class="form-group">
+          <label for="name">菜品介绍</label>
+          <textarea class="form-control" rows="3" v-model="eidtProduct.content"></textarea>
+        </div>
+        <button type="button" class="btn btn-default"  @click="submitEditProduct($event)">确定更改</button>
+      </form>
     </div>
     <div id="addProductSection">
     <form action="">
@@ -123,6 +128,23 @@
       <input type="text" class="form-control" id="addProductTypename" v-model="addProductTypename"
              placeholder="请输入名称">
       <button type="button" class="btn btn-default"  @click="addProductType()">提交</button>
+      <table class="table table-bordered">
+        <caption>删除菜单种类后该种类下的菜品一并删除<span class="label label-default">请慎重选择！</span></caption>
+        <thead>
+        <tr>
+          <th>种类名称</th>
+          <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <template v-for="(productType,index) in productTypes">
+        <tr>
+          <td>{{productType.name}}</td>
+          <td><button type="button" class="btn btn-danger" @click="deleteProductType(index)">删除</button></td>
+        </tr>
+        </template>
+        </tbody>
+      </table>
     </div>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -146,13 +168,11 @@
             <button type="button" class="btn btn-default"
                     data-dismiss="modal">关闭
             </button>
-            <button type="button" class="btn btn-primary">
-              编辑
-            </button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
   </div>
 </template>
 <script type="text/javascript">
@@ -296,6 +316,7 @@
           document.getElementById("addProductTypeSection").style.display="block";
           var a= document.getElementById("selectFunction");
           var items=a.getElementsByTagName("li");
+          this.addProductType();
           for(var i=0; i<items.length;i++)
           {
             if(i!=index){
@@ -341,6 +362,8 @@
         event.preventDefault();//阻止提交
         console.log(this.addProduct);
         let formData = new FormData();
+        formData.append('oldImgUrl',this.eidtProduct.imgUrl);
+        formData.append('productId',this.eidtProduct.productId);
         formData.append('productName',this.eidtProduct.productName);
         formData.append('price',this.eidtProduct.price);
         formData.append('text',this.eidtProduct.content);
@@ -363,6 +386,29 @@
           }
         ).catch(error => {
 
+        });
+      },
+      deleteProduct:function (index) {
+        var url ='/servlet/ProductServlet?type=deleteProduct&productId='+this.products[index].productId;
+        this.products.splice(index,1);
+        this.$http.get(url)  //发出请求
+          .then(response =>{
+            // 响应成功回调
+            alert("删除成功！");
+          }).catch(error => {
+          console.log(error);
+        });
+      },
+      deleteProductType:function (index) {
+        var url ='/servlet/productTypeServlet?type=deleteProductType&productTypeId='+this.productTypes[index].productTypeId;
+        this.productTypes.splice(index,1);
+        this.$http.get(url)  //发出请求
+          .then(response =>{
+            // 响应成功回调
+            this.addProductType();
+            alert("删除成功！");
+          }).catch(error => {
+          console.log(error);
         });
       }
     }

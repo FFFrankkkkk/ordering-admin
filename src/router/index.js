@@ -8,6 +8,8 @@ import manageMain from '@/components/manageUIMain/manageMain'
 import manageProduct from '@/components/manage/manageProduct'
 import shoppingCart from '@/components/user/shoppingCart'
 import manageOrder from '@/components/manage/manageOrder'
+import register from '@/components/register'
+import changePassword from '@/components/changePassword'
 import $ from 'jquery'
 // import 'bootstrap'
 // import 'bootstrap/dist/css/bootstrap.css'
@@ -47,6 +49,16 @@ export default new Router({
       path: '/manageOrder',
       name: 'manageOrder',
       component: manageOrder
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    {
+      path: '/changePassword',
+      name: 'changePassword',
+      component: changePassword
     }
   ]
 })

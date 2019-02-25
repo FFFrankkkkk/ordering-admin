@@ -66,11 +66,11 @@
             </fieldset>
             <fieldset class="form-actions">
               <button type="button" class="btn btn-default btn-red btn-block btn-xl btn-submit" v-on:click="submitForm" >登录</button>
-              <p class="action-forgot-password "><a class="action-link" href="forgot-password.html" tppabs="https://www.4008-517-517.cn/cn/forgot-password.html">忘记密码？</a></p>
+              <p class="action-forgot-password ">  <router-link to="/changePassword"><a class="action-link" href="forgot-password.html" tppabs="https://www.4008-517-517.cn/cn/forgot-password.html">忘记密码？</a></router-link></p>
               <p class="login-other"><span><block>第三方登录：</block><a href="javascript:if(confirm('https://open.weixin.qq.com/connect/qrconnect?appid=wxf2443890c9035c8c&redirect_uri=https%3A%2F%2Fcnprod-wos.4008-517-517.cn%2Fcn%2Fwechat_callback.html&response_type=code&scope=snsapi_login&state=123  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://open.weixin.qq.com/connect/qrconnect?appid=wxf2443890c9035c8c&redirect_uri=https%3A%2F%2Fcnprod-wos.4008-517-517.cn%2Fcn%2Fwechat_callback.html&response_type=code&scope=snsapi_login&state=123#wechat_redirect'" tppabs="https://open.weixin.qq.com/connect/qrconnect?appid=wxf2443890c9035c8c&redirect_uri=https%3A%2F%2Fcnprod-wos.4008-517-517.cn%2Fcn%2Fwechat_callback.html&response_type=code&scope=snsapi_login&state=123#wechat_redirect"><img src="../css/img/login_logo_wechat.png" tppabs="https://www.4008-517-517.cn/cn/assets/86/img/login_logo_wechat.png" /></a></span></p>
               <hr class="fading-divider" />
               <a class="action-link" onclick="                 dataLayer.push({                  'event':'trackEvent',                  'vpv':'vpv_enter_delivery_address',                  'eventDetails.category':'registration',                  'eventDetails.action':'click',                  'eventDetails.label':'register_homepage'                 });                " href="guest.html" tppabs="https://www.4008-517-517.cn/cn/guest.html">
-                <p class="header-new-customer">注册新用户</p>
+                <router-link to="/register"><p class="header-new-customer">注册新用户</p></router-link>
               </a>
             </fieldset>
             <input type="hidden" name="csrfValue" value="C78C4C5" /></form>
